@@ -3,452 +3,415 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Protocolo Detox Digital | Recupere a infância</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>Protocolo Detox Digital | Resgate a Infância</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-dark: #050507;
-      --bg-card: rgba(255, 255, 255, 0.03);
-      --bg-card-hover: rgba(255, 255, 255, 0.06);
-      --border: rgba(255, 255, 255, 0.08);
-      --primary: #10b981; /* Esmeralda para saúde/calma */
-      --primary-glow: rgba(16, 185, 129, 0.4);
-      --accent: #6366f1; /* Indigo para ciência */
-      --text-main: #ffffff;
-      --text-muted: #94a3b8;
+      /* Paleta "Biblioteca/Editorial" */
+      --color-gold: #B8860B; /* Dourado escuro para botões/detalhes */
+      --color-gold-hover: #9c7209;
+      --color-navy: #15202B; /* Azul noturno profundo para fundos de contraste */
+      --color-paper: #F9F7F2; /* Off-white cor de papel antigo/livro */
+      --color-white: #FFFFFF;
+      --color-text: #2c2c2c;
+      --color-text-light: #555555;
       
-      --radius-xl: 32px;
-      --radius-lg: 20px;
-      --radius-sm: 12px;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Lato', sans-serif;
       
-      --font-body: "Plus Jakarta Sans", sans-serif;
+      --spacing-section: 100px; /* Espaçamento generoso entre "slides" */
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
+      background-color: var(--color-paper);
+      color: var(--color-text);
       font-family: var(--font-body);
-      overflow-x: hidden;
-      line-height: 1.6;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Background Gradients */
-    .ambient-light {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      z-index: -1;
-      background: 
-        radial-gradient(circle at 15% 10%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.12) 0%, transparent 45%);
-      pointer-events: none;
+    /* Tipografia de Autoridade */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-navy);
+      line-height: 1.2;
     }
 
-    /* Layout Utilities */
-    .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
-    }
-    
-    section { padding: 100px 0; }
-
-    /* Typography */
-    h1, h2, h3 { line-height: 1.1; letter-spacing: -0.03em; }
-    
     h1 {
-      font-size: clamp(3rem, 5vw, 4.5rem);
-      font-weight: 800;
-      background: linear-gradient(180deg, #fff 0%, #cbd5e1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 700;
       margin-bottom: 24px;
     }
 
-    h2 { font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 20px; }
-    
-    h3 { font-size: 1.5rem; font-weight: 600; color: #fff; margin-bottom: 12px; }
-    
-    p { font-size: 1.1rem; color: var(--text-muted); font-weight: 400; }
-    
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 16px;
-      padding: 6px 14px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.2);
-      border-radius: 100px;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 32px;
-      font-size: 1.05rem;
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
       font-weight: 600;
-      text-decoration: none;
-      border-radius: 100px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
     }
 
-    .btn-primary {
-      background: var(--text-main);
-      color: var(--bg-dark);
-      box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(255,255,255,0.2);
-    }
-
-    .btn-glow {
-      background: linear-gradient(135deg, var(--primary), #059669);
-      color: #fff;
-      box-shadow: 0 10px 40px -10px var(--primary-glow);
-      border: 1px solid rgba(255,255,255,0.2);
+    /* Adiciona um detalhe elegante abaixo dos H2 */
+    .section-title h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: var(--color-gold);
+      margin: 15px auto 0;
     }
     
-    .btn-glow:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 20px 50px -10px var(--primary-glow);
+    .section-title.left h2::after { margin: 15px 0 0; }
+
+    p {
+      font-size: 1.125rem;
+      color: var(--color-text-light);
+      margin-bottom: 20px;
+      max-width: 800px;
     }
 
-    /* Cards & Glassmorphism */
-    .glass-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+    .lead { font-size: 1.3rem; font-weight: 300; }
+
+    /* Botões Elegantes */
+    .btn {
+      display: inline-block;
+      padding: 18px 40px;
+      background-color: var(--color-gold);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border-radius: 4px; /* Bordas levemente arredondadas, não pílula */
+      transition: background 0.3s ease;
+      border: 1px solid var(--color-gold);
     }
 
-    .glass-card:hover {
-      border-color: rgba(255,255,255,0.15);
-      background: var(--bg-card-hover);
-      transform: translateY(-4px);
+    .btn:hover {
+      background-color: var(--color-gold-hover);
+      border-color: var(--color-gold-hover);
     }
 
-    /* Hero Section */
+    .btn-outline {
+      background: transparent;
+      color: var(--color-navy);
+      border: 1px solid var(--color-navy);
+    }
+    
+    .btn-outline:hover {
+      background: var(--color-navy);
+      color: #fff;
+    }
+
+    /* Estrutura de Slides/Seções */
+    section {
+      padding: var(--spacing-section) 0;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Hero Section - Slide 1 */
     .hero {
+      background: linear-gradient(to right, #F9F7F2 50%, #ECE9E0 50%); /* Divisão sutil */
       min-height: 90vh;
       display: flex;
       align-items: center;
-      position: relative;
-      padding-top: 80px;
     }
 
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .book-mockup {
+      background: #fff;
+      width: 100%;
+      height: 500px; /* Placeholder para imagem */
+      box-shadow: -20px 20px 60px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+      position: relative;
+    }
+    
+    .book-mockup::after {
+      content: "IMAGEM DO PRODUTO/MÃE E FILHO";
+      color: #ccc;
+      font-weight: 700;
       text-align: center;
     }
 
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 60px;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .stat-val { font-size: 1.8rem; font-weight: 700; color: #fff; }
-    .stat-label { font-size: 0.9rem; color: var(--text-muted); }
-
-    /* Problem Section */
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .highlight-box {
-      border-left: 4px solid var(--accent);
-      padding-left: 24px;
-      margin-bottom: 24px;
+    /* Slide Escuro (Contraste) */
+    .bg-navy {
+      background-color: var(--color-navy);
+      color: #fff;
     }
     
-    .highlight-box strong { color: #fff; display: block; margin-bottom: 4px; font-size: 1.2rem;}
+    .bg-navy h2, .bg-navy h3, .bg-navy p { color: #fff; }
+    .bg-navy .section-title h2::after { background-color: var(--color-gold); }
 
-    /* Bento Grid Layout */
-    .bento-grid {
+    /* Cards e Grids (Estilo Biblioteca) */
+    .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
     }
 
-    .bento-wide { grid-column: span 1; }
+    .feature-card {
+      background: #fff;
+      padding: 40px 30px;
+      border-top: 4px solid var(--color-gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
     
-    @media (min-width: 900px) {
-      .bento-wide { grid-column: span 2; }
+    .feature-card:hover { transform: translateY(-5px); }
+
+    .feature-icon {
+      font-size: 2rem;
+      color: var(--color-gold);
+      margin-bottom: 20px;
+      font-family: var(--font-heading);
     }
 
-    .step-number {
-      font-size: 3rem;
-      font-weight: 800;
-      opacity: 0.1;
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: var(--color-navy);
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Conteúdo Programático (Lista Elegante) */
+    .module-list {
+      list-style: none;
+      border-top: 1px solid #ddd;
+    }
+
+    .module-item {
+      display: flex;
+      padding: 25px 0;
+      border-bottom: 1px solid #ddd;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .module-number {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--color-gold);
+      line-height: 1;
+      font-weight: 700;
+      min-width: 60px;
+    }
+
+    /* Seção de Preço */
+    .price-section {
+      text-align: center;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .price-section::before {
+      content: "";
       position: absolute;
-      top: 10px;
-      right: 20px;
+      top: 5px; left: 5px; right: 5px; bottom: 5px;
+      border: 1px solid var(--color-gold);
       pointer-events: none;
     }
 
-    /* Timeline Styled List */
-    .timeline-steps {
-      border-left: 2px solid var(--border);
-      padding-left: 30px;
-      margin-left: 10px;
-    }
-    .step-item { position: relative; margin-bottom: 40px; }
-    .step-item::before {
-      content: '';
-      position: absolute;
-      left: -36px;
-      top: 6px;
-      width: 10px;
-      height: 10px;
-      background: var(--primary);
-      border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
-    }
-    .step-item:last-child { margin-bottom: 0; }
-    .step-title { color: #fff; font-weight: 700; font-size: 1.1rem; margin-bottom: 4px; display: block;}
-
-    /* Pricing */
-    .offer-box {
-      background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-xl);
-      padding: 60px 40px;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
+    .price-tag {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      color: var(--color-navy);
+      font-weight: 700;
+      margin: 20px 0;
     }
     
-    .offer-box::before {
-      content: '';
-      position: absolute;
-      top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
-      animation: rotate 10s linear infinite;
-    }
-    
-    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-    .offer-content { position: relative; z-index: 2; }
-    .price-tag { font-size: 4rem; font-weight: 800; color: #fff; line-height: 1; margin: 24px 0; }
-    .price-sub { font-size: 1rem; color: var(--text-muted); margin-bottom: 32px; }
-
-    /* Animation Classes */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    .delay-100 { transition-delay: 0.1s; }
-    .delay-200 { transition-delay: 0.2s; }
-    .delay-300 { transition-delay: 0.3s; }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 60px 0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #555;
+    .price-old {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 1.2rem;
     }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 2.5rem; }
-      .problem-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 20px; }
-      .offer-box { padding: 40px 20px; }
+    /* Responsividade */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero { background: var(--color-paper); text-align: center; padding-top: 120px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .book-mockup { height: 300px; display: none; } /* Ocultar mockup no mobile ou ajustar */
+      .section-title h2::after { margin: 15px auto; }
+      .section-title.left h2::after { margin: 15px auto; } /* Centralizar tudo no mobile */
+      .section-title.left { text-align: center; }
+      .module-item { flex-direction: column; gap: 10px; text-align: center; }
+      .module-number { margin: 0 auto; }
     }
   </style>
 </head>
 <body>
 
-  <div class="ambient-light"></div>
-
-  <header class="hero">
-    <div class="container hero-content">
-      <div class="reveal">
-        <span class="eyebrow">Neurociência Aplicada</span>
-        <h1>Faça seu filho largar o celular em <span style="color: var(--primary);">7 dias</span>.</h1>
-        <p style="max-width: 600px; margin: 0 auto 32px auto;">
-          Sem gritos, sem castigos e sem culpa. Um protocolo baseado no funcionamento dopaminérgico do cérebro infantil para restaurar a atenção e a calma em casa.
-        </p>
-        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="#oferta" class="btn btn-glow">Começar Protocolo</a>
-          <a href="#como-funciona" class="btn btn-primary" style="background: transparent; border: 1px solid var(--border); color: #fff;">Entender a Ciência</a>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h4 style="color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 20px; font-weight: 700;">Método Científico & Parentalidade</h4>
+        <h1>Resgate a infância do seu filho em 7 dias.</h1>
+        <p class="lead">Um protocolo estruturado para eliminar a dependência de telas, reduzir a irritabilidade e devolver a capacidade de brincar.</p>
+        <div style="margin-top: 30px;">
+          <a href="#oferta" class="btn">Quero Começar o Protocolo</a>
         </div>
+        <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.7;">*Baseado em neurociência do desenvolvimento.</p>
       </div>
-
-      <div class="hero-stats reveal delay-200">
-        <div class="stat-item">
-          <span class="stat-val">7 Dias</span>
-          <span class="stat-label">Para reverter o hábito</span>
+      <div class="book-mockup">
         </div>
-        <div class="stat-item">
-          <span class="stat-val">100%</span>
-          <span class="stat-label">Acionável e prático</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-val">Zero</span>
-          <span class="stat-label">Termos técnicos difíceis</span>
-        </div>
-      </div>
     </div>
-  </header>
+  </section>
 
-  <section id="problema">
-    <div class="container problem-grid">
-      <div class="reveal">
-        <h2>Você não planejou isso,<br>mas virou uma guerra.</h2>
-        <p>Um dia o celular era um recurso de 10 minutos para você conseguir tomar banho. Hoje, ele dita o humor da casa.</p>
-        <br>
-        <div class="highlight-box">
-          <strong>O Ciclo da Dopamina</strong>
-          <p style="font-size: 0.95rem;">Telas hiper-estimulantes viciam o cérebro em recompensas rápidas. O mundo real (brincar, desenhar, conversar) parece "chato" e lento em comparação. É biológico, não falta de caráter.</p>
-        </div>
+  <section style="background-color: #fff;">
+    <div class="container">
+      <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+        <h2>A "nova normalidade" está destruindo<br>o desenvolvimento infantil.</h2>
       </div>
-      <div class="glass-card reveal delay-200" style="background: rgba(255, 100, 100, 0.05); border-color: rgba(255, 100, 100, 0.1);">
-        <h3>Sinais de Alerta</h3>
-        <ul style="list-style: none; margin-top: 20px;">
-          <li style="margin-bottom: 16px; display: flex; gap: 12px; align-items: center;">
-            <span style="color: #ef4444;">✕</span> Irritabilidade extrema ao desligar a tela.
-          </li>
-          <li style="margin-bottom: 16px; display: flex; gap: 12px; align-items: center;">
-            <span style="color: #ef4444;">✕</span> Incapacidade de brincar sozinho.
-          </li>
-          <li style="margin-bottom: 16px; display: flex; gap: 12px; align-items: center;">
-            <span style="color: #ef4444;">✕</span> Tédio constante fora do digital.
-          </li>
-          <li style="display: flex; gap: 12px; align-items: center;">
-            <span style="color: #ef4444;">✕</span> Negociação interminável por "mais 5 minutos".
-          </li>
-        </ul>
+      
+      <div class="hero-grid">
+        <div style="padding-right: 20px;">
+          <p>Não é apenas sobre "ficar no celular". É sobre o que acontece com o cérebro quando ele é bombardeado por dopamina rápida, horas por dia.</p>
+          <p>Você percebe os sinais: a criança não tolera o tédio. A comida só é aceita com tela. O sono é agitado. E a simples menção de "desligar" gera uma crise desproporcional.</p>
+          <p><strong>Isso não é fase. É um padrão neurológico que precisa ser interrompido.</strong></p>
+        </div>
+        <div style="background: var(--color-paper); padding: 40px; border-left: 4px solid var(--color-navy);">
+          <h3 style="font-size: 1.5rem; margin-bottom: 20px;">O que estamos enfrentando:</h3>
+          <ul style="list-style: none; space-y: 15px;">
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: var(--color-gold); font-size: 1.5rem;">•</span> Fragmentação da atenção.
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+              <span style="color: var(--color-gold); font-size: 1.5rem;">•</span> Intolerância à frustração.
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px;">
+              <span style="color: var(--color-gold); font-size: 1.5rem;">•</span> Perda da criatividade no mundo real.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="como-funciona">
+  <section class="bg-navy">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 60px;" class="reveal">
-        <span class="eyebrow">O Método</span>
-        <h2>Não é sobre proibir.<br>É sobre recalibrar.</h2>
-        <p>Força de vontade não vence química cerebral. Estratégia vence.</p>
+      <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+        <h2>Um retorno à ordem em 3 etapas</h2>
+        <p style="color: rgba(255,255,255,0.8); margin: 0 auto;">O Protocolo Detox Digital não é um conjunto de dicas soltas. É um sistema.</p>
       </div>
 
-      <div class="bento-grid">
-        <div class="glass-card reveal">
-          <span class="step-number">01</span>
-          <h3>Entenda o "Porquê"</h3>
-          <p>Um guia curto e direto sobre o que acontece no córtex pré-frontal do seu filho. Quando você entende a biologia, a culpa desaparece e a estratégia começa.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">I</div>
+          <h3>Consciência & Preparo</h3>
+          <p>Entenda o mecanismo biológico do vício e prepare o ambiente (e sua mente) para a mudança, eliminando a culpa dos pais.</p>
         </div>
-
-        <div class="glass-card reveal delay-100">
-          <span class="step-number">02</span>
-          <h3>Gestão de Crise</h3>
-          <p>Como lidar com a "abstinência" e as birras dos primeiros dias sem ceder, sem gritar e mantendo a conexão emocional.</p>
+        <div class="feature-card">
+          <div class="feature-icon">II</div>
+          <h3>Interrupção Assistida</h3>
+          <p>Um guia passo a passo para os dias de "choque", ensinando a lidar com a abstinência e as birras sem ceder.</p>
         </div>
+        <div class="feature-card">
+          <div class="feature-icon">III</div>
+          <h3>Reconstrução do Hábito</h3>
+          <p>Ferramentas para preencher o vazio deixado pela tela com atividades sensoriais que restauram o foco e a calma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="glass-card bento-wide reveal delay-200" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(255,255,255,0.02)); border-color: rgba(16, 185, 129, 0.2);">
-          <span class="step-number" style="color: var(--primary); opacity: 0.2;">03</span>
-          <h3 style="color: var(--primary);">O Cronograma de 7 Dias</h3>
-          <p style="margin-bottom: 24px;">Um plano de ação dia após dia. Você não precisa pensar no que fazer, apenas seguir o roteiro.</p>
-          
-          <div class="timeline-steps">
-            <div class="step-item">
-              <span class="step-title">Dias 1-2: Redução Estratégica</span>
-              <span style="font-size: 0.9rem; color: var(--text-muted);">Técnicas de substituição de dopamina sem choque.</span>
-            </div>
-            <div class="step-item">
-              <span class="step-title">Dias 3-5: O "Detox" Sensorial</span>
-              <span style="font-size: 0.9rem; color: var(--text-muted);">Reintrodução de tédio construtivo e brincadeiras offline.</span>
-            </div>
-            <div class="step-item">
-              <span class="step-title">Dias 6-7: A Nova Rotina</span>
-              <span style="font-size: 0.9rem; color: var(--text-muted);">Estabelecendo o novo normal sustentável.</span>
-            </div>
+  <section>
+    <div class="container">
+      <div class="section-title left" style="margin-bottom: 50px;">
+        <h2>O cronograma de 7 dias</h2>
+        <p>Tudo o que você precisa fazer, dia após dia. Sem improvisos.</p>
+      </div>
+
+      <ul class="module-list">
+        <li class="module-item">
+          <div class="module-number">01</div>
+          <div>
+            <h3>Dias 1 e 2: A Redução Gradual</h3>
+            <p style="margin-bottom: 0;">Como introduzir limites sem gerar uma guerra nuclear imediata. Técnicas de substituição de estímulos visuais por auditivos.</p>
           </div>
-        </div>
-      </div>
+        </li>
+        <li class="module-item">
+          <div class="module-number">03</div>
+          <div>
+            <h3>Dias 3 a 5: O Vale da Abstinência</h3>
+            <p style="margin-bottom: 0;">O período crítico. Você receberá roteiros do que falar e o que fazer quando a criança disser que "não tem nada para fazer".</p>
+          </div>
+        </li>
+        <li class="module-item">
+          <div class="module-number">06</div>
+          <div>
+            <h3>Dias 6 e 7: A Consolidação</h3>
+            <p style="margin-bottom: 0;">Estabelecendo as regras de Higiene Digital que durarão anos. Criação de "Zonas Livres de Tela" na casa.</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <section id="oferta">
-    <div class="container reveal">
-      <div class="offer-box">
-        <div class="offer-content">
-          <h2>Recupere a atenção do seu filho</h2>
-          <p>Custa menos que um brinquedo que ele vai esquecer amanhã.</p>
-          
-          <div class="price-tag">R$ 29,90</div>
-          <div class="price-sub">Pagamento único. Acesso vitalício.</div>
-          
-          <a href="#" class="btn btn-glow" style="width: 100%; max-width: 300px; padding: 20px;">Quero o Protocolo Agora</a>
-          
-          <p style="margin-top: 24px; font-size: 0.85rem; opacity: 0.7;">
-            🔒 <strong>Garantia de 7 dias:</strong> Se você aplicar e não sentir diferença na harmonia da casa, devolvemos seu dinheiro. Sem perguntas.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
+  <section style="background-color: var(--color-paper);" id="oferta">
     <div class="container">
-      <p>&copy; 2023 Protocolo Detox Digital. Todos os direitos reservados.</p>
-      <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">Este produto não substitui aconselhamento médico profissional.</p>
+      <div class="price-section">
+        <h4 style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: #777;">Acesso Imediato ao Material Completo</h4>
+        <h2 style="margin-top: 10px;">Protocolo Detox Digital</h2>
+        
+        <div class="price-tag">
+          <span style="font-size: 1.5rem; vertical-align: top; color: #777;">R$</span> 29,90
+        </div>
+        
+        <p style="font-size: 0.95rem; margin-bottom: 30px;">Menos que o valor de um lanche. Um investimento vitalício na saúde mental da sua família.</p>
+        
+        <a href="#" class="btn" style="width: 100%;">Adquirir Agora</a>
+        
+        <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+          <p style="font-size: 0.8rem; font-style: italic;">Garantia incondicional de 7 dias. Se não funcionar para sua família, devolvemos o valor integralmente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: var(--color-navy); color: #fff; padding: 60px 0; text-align: center;">
+    <div class="container">
+      <h3 style="color: #fff; font-family: var(--font-heading); margin-bottom: 20px;">Protocolo Detox Digital</h3>
+      <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Copyright © 2024. Todos os direitos reservados.</p>
+      <div style="margin-top: 20px;">
+        <a href="#" style="color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Termos de Uso</a>
+        <a href="#" style="color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Política de Privacidade</a>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Simple Interaction Observer for Scroll Reveal Animations
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target); // Only animate once
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal').forEach(el => {
-      observer.observe(el);
-    });
-  </script>
 </body>
 </html>
