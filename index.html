@@ -7,7 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -16,14 +16,14 @@
       --color-gold-hover: #9c7209;
       --color-navy: #15202B; /* Azul noturno profundo para fundos de contraste */
       --color-paper: #F9F7F2; /* Off-white cor de papel antigo/livro */
-      --color-white: #FFFFFF;
+      --color-white: #f3f3f3;
       --color-text: #2c2c2c;
-      --color-text-light: #555555;
+      --color-text-light: #343434;
       
       --font-heading: 'Playfair Display', serif;
-      --font-body: 'Lato', sans-serif;
+      --font-body: 'Montserrat', sans-serif;
       
-      --spacing-section: 100px; /* Espaçamento generoso entre "slides" */
+      --spacing-section: 80px; /* Espaçamento generoso entre "slides" */
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,7 +51,7 @@
 
     h2 {
       font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 600;
+      font-weight: 750;
       margin-bottom: 20px;
       position: relative;
       display: inline-block;
@@ -61,8 +61,8 @@
     .section-title h2::after {
       content: "";
       display: block;
-      width: 60px;
-      height: 3px;
+      width: 100%px;
+      height: 2px;
       background-color: var(--color-gold);
       margin: 15px auto 0;
     }
@@ -90,7 +90,7 @@
       letter-spacing: 1px;
       font-size: 0.9rem;
       border-radius: 4px; /* Bordas levemente arredondadas, não pílula */
-      transition: background 0.3s ease;
+      transition: background 0.5s ease;
       border: 1px solid var(--color-gold);
     }
 
@@ -250,7 +250,7 @@
       font-size: 4rem;
       color: var(--color-navy);
       font-weight: 700;
-      margin: 20px 0;
+      margin: 12px 0;
     }
     
     .price-old {
@@ -278,13 +278,13 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <h4 style="color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 20px; font-weight: 700;">Método Científico & Parentalidade</h4>
+        <h4 style="color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 20px; font-weight: 700;"/h4>
         <h1>Resgate a infância do seu filho em 7 dias.</h1>
         <p class="lead">Um protocolo estruturado para eliminar a dependência de telas, reduzir a irritabilidade e devolver a capacidade de brincar.</p>
         <div style="margin-top: 30px;">
           <a href="#oferta" class="btn">Quero Começar o Protocolo</a>
         </div>
-        <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.7;">*Baseado em neurociência do desenvolvimento.</p>
+        <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.7;">*Baseado em neurociência.</p>
       </div>
       <div class="book-mockup">
         </div>
@@ -297,22 +297,23 @@
         <h2>A "nova normalidade" está destruindo<br>o desenvolvimento infantil.</h2>
       </div>
       
-      <div class="hero-grid">
-        <div style="padding-right: 20px;">
-          <p>Não é apenas sobre "ficar no celular". É sobre o que acontece com o cérebro quando ele é bombardeado por dopamina rápida, horas por dia.</p>
-          <p>Você percebe os sinais: a criança não tolera o tédio. A comida só é aceita com tela. O sono é agitado. E a simples menção de "desligar" gera uma crise desproporcional.</p>
-          <p><strong>Isso não é fase. É um padrão neurológico que precisa ser interrompido.</strong></p>
+      <div style="max-width: 850px; margin: 0 auto;"> 
+        <div style="margin-bottom: 40px; text-align: center;">
+          <p style="margin: 0 auto 20px;">Não é apenas sobre "ficar no celular". É sobre o que acontece com o cérebro quando ele é bombardeado por dopamina rápida, horas por dia.</p>
+          <p style="margin: 0 auto 20px;">Você percebe os sinais: a criança não tolera o tédio. A comida só é aceita com tela. O sono é agitado. E a simples menção de "desligar" gera uma crise desproporcional.</p>
+          <p style="margin: 0 auto;"><strong>Isso não é fase. É um padrão neurológico que precisa ser interrompido.</strong></p>
         </div>
-        <div style="background: var(--color-paper); padding: 40px; border-left: 4px solid var(--color-navy);">
-          <h3 style="font-size: 1.5rem; margin-bottom: 20px;">O que estamos enfrentando:</h3>
-          <ul style="list-style: none; space-y: 15px;">
-            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+
+        <div style="background: var(--color-paper); padding: 40px; border-left: 4px solid var(--color-navy); max-width: 600px; margin: 0 auto;">
+          <h3 style="font-size: 1.5rem; margin-bottom: 15px; text-align: left;">O que estamos enfrentando:</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 7px;">
               <span style="color: var(--color-gold); font-size: 1.5rem;">•</span> Fragmentação da atenção.
             </li>
-            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 7px;">
               <span style="color: var(--color-gold); font-size: 1.5rem;">•</span> Intolerância à frustração.
             </li>
-            <li style="display: flex; align-items: center; gap: 10px;">
+            <li style="display: flex; align-items: center; gap: 7px;">
               <span style="color: var(--color-gold); font-size: 1.5rem;">•</span> Perda da criatividade no mundo real.
             </li>
           </ul>
@@ -320,7 +321,7 @@
       </div>
     </div>
   </section>
-
+  
   <section class="bg-navy">
     <div class="container">
       <div class="section-title" style="text-align: center; margin-bottom: 60px;">
@@ -328,25 +329,34 @@
         <p style="color: rgba(255,255,255,0.8); margin: 0 auto;">O Protocolo Detox Digital não é um conjunto de dicas soltas. É um sistema.</p>
       </div>
 
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">I</div>
-          <h3>Consciência & Preparo</h3>
-          <p>Entenda o mecanismo biológico do vício e prepare o ambiente (e sua mente) para a mudança, eliminando a culpa dos pais.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">II</div>
-          <h3>Interrupção Assistida</h3>
-          <p>Um guia passo a passo para os dias de "choque", ensinando a lidar com a abstinência e as birras sem ceder.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">III</div>
-          <h3>Reconstrução do Hábito</h3>
-          <p>Ferramentas para preencher o vazio deixado pela tela com atividades sensoriais que restauram o foco e a calma.</p>
-        </div>
+ <section class="bg-navy">
+  <div class="container">
+    <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+      <h2 style="color: #fff;">Um retorno à ordem em 3 etapas</h2>
+      <p style="color: rgba(255,255,255,0.8); margin: 0 auto;">O Protocolo Detox Digital não é um conjunto de dicas soltas. É um sistema.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="color: var(--color-gold);">1</div>
+        <h3 style="color: var(--color-navy);">Consciência e Preparo</h3>
+        <p style="color: var(--color-text-light);">Entenda o mecanismo biológico do vício e prepare o ambiente (e sua mente) para a mudança, eliminando a culpa dos pais.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="color: var(--color-gold);">2</div>
+        <h3 style="color: var(--color-navy);">Interrupção Assistida</h3>
+        <p style="color: var(--color-text-light);">Um guia passo a passo para os dias de "choque", ensinando a lidar com a abstinência e as birras sem ceder.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="color: var(--color-gold);">3</div>
+        <h3 style="color: var(--color-navy);">Reconstrução do Hábito</h3>
+        <p style="color: var(--color-text-light);">Ferramentas para preencher o vazio deixado pela tela com atividades sensoriais que restauram o foco e a calma.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <section>
     <div class="container">
@@ -384,18 +394,18 @@
   <section style="background-color: var(--color-paper);" id="oferta">
     <div class="container">
       <div class="price-section">
-        <h4 style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: #777;">Acesso Imediato ao Material Completo</h4>
+        <h4 style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: #777;">Acesso Imediato ao Material Completo</h2>
         <h2 style="margin-top: 10px;">Protocolo Detox Digital</h2>
         
         <div class="price-tag">
           <span style="font-size: 1.5rem; vertical-align: top; color: #777;">R$</span> 29,90
         </div>
         
-        <p style="font-size: 0.95rem; margin-bottom: 30px;">Menos que o valor de um lanche. Um investimento vitalício na saúde mental da sua família.</p>
+        <p style="font-size: 0.95rem; margin-bottom: 50px;">Menos que o valor de um lanche. Um investimento vitalício na saúde mental da sua família.</p>
         
         <a href="#" class="btn" style="width: 100%;">Adquirir Agora</a>
         
-        <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+        <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 30px;">
           <p style="font-size: 0.8rem; font-style: italic;">Garantia incondicional de 7 dias. Se não funcionar para sua família, devolvemos o valor integralmente.</p>
         </div>
       </div>
@@ -405,7 +415,7 @@
   <footer style="background: var(--color-navy); color: #fff; padding: 60px 0; text-align: center;">
     <div class="container">
       <h3 style="color: #fff; font-family: var(--font-heading); margin-bottom: 20px;">Protocolo Detox Digital</h3>
-      <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Copyright © 2024. Todos os direitos reservados.</p>
+      <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Copyright © 2026. Todos os direitos reservados.</a>
       <div style="margin-top: 20px;">
         <a href="#" style="color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Termos de Uso</a>
         <a href="#" style="color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Política de Privacidade</a>
