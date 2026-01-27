@@ -3,485 +3,452 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Protocolo Detox Digital</title>
+  <title>Protocolo Detox Digital | Recupere a infância</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
   <style>
     :root {
-      --bg: #0c1116;
-      --bg-alt: #121a22;
-      --card: rgba(255, 255, 255, 0.06);
-      --card-strong: rgba(255, 255, 255, 0.1);
-      --text: #f5f7fa;
-      --muted: #b7c1cc;
-      --accent: #38f2c2;
-      --accent-2: #5b8cff;
-      --accent-3: #f6c945;
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
-      --radius-lg: 28px;
-      --radius-md: 18px;
+      --bg-dark: #050507;
+      --bg-card: rgba(255, 255, 255, 0.03);
+      --bg-card-hover: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.08);
+      --primary: #10b981; /* Esmeralda para saúde/calma */
+      --primary-glow: rgba(16, 185, 129, 0.4);
+      --accent: #6366f1; /* Indigo para ciência */
+      --text-main: #ffffff;
+      --text-muted: #94a3b8;
+      
+      --radius-xl: 32px;
+      --radius-lg: 20px;
       --radius-sm: 12px;
+      
+      --font-body: "Plus Jakarta Sans", sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: "Montserrat", sans-serif;
-      background: radial-gradient(circle at top, rgba(56, 242, 194, 0.12), transparent 50%),
-        radial-gradient(circle at 20% 20%, rgba(91, 140, 255, 0.2), transparent 45%),
-        var(--bg);
-      color: var(--text);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow-x: hidden;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-    }
-
-    .container {
-      width: min(1200px, 90vw);
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 80px 0;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent);
-      background: rgba(56, 242, 194, 0.1);
-      border: 1px solid rgba(56, 242, 194, 0.2);
-    }
-
-    .eyebrow {
-      font-size: 0.9rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 4vw, 4.2rem);
-      line-height: 1.1;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      line-height: 1.2;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-    }
-
-    p {
-      color: var(--muted);
-    }
-
-    .hero {
-      padding: 90px 0 110px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .hero-card {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(56, 242, 194, 0.2), transparent 55%);
-      opacity: 0.7;
+    /* Background Gradients */
+    .ambient-light {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -1;
+      background: 
+        radial-gradient(circle at 15% 10%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.12) 0%, transparent 45%);
       pointer-events: none;
     }
 
-    .hero-content {
-      display: grid;
-      gap: 24px;
+    /* Layout Utilities */
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+    
+    section { padding: 100px 0; }
+
+    /* Typography */
+    h1, h2, h3 { line-height: 1.1; letter-spacing: -0.03em; }
+    
+    h1 {
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 800;
+      background: linear-gradient(180deg, #fff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 24px;
     }
 
-    .cta-group {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+    h2 { font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 20px; }
+    
+    h3 { font-size: 1.5rem; font-weight: 600; color: #fff; margin-bottom: 12px; }
+    
+    p { font-size: 1.1rem; color: var(--text-muted); font-weight: 400; }
+    
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding: 6px 14px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 100px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
       align-items: center;
+      justify-content: center;
+      padding: 16px 32px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 100px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #1fd1a2);
-      color: #03130e;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 12px 30px rgba(56, 242, 194, 0.35);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: var(--text-main);
+      color: var(--bg-dark);
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 45px rgba(56, 242, 194, 0.4);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.2);
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 14px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.05);
+    .btn-glow {
+      background: linear-gradient(135deg, var(--primary), #059669);
+      color: #fff;
+      box-shadow: 0 10px 40px -10px var(--primary-glow);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px -10px var(--primary-glow);
     }
 
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 18px;
-      margin-top: 20px;
-    }
-
-    .stat {
-      background: var(--card);
+    /* Cards & Glassmorphism */
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
-      padding: 18px;
-      border-radius: var(--radius-sm);
-      text-align: left;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
-    .stat strong {
-      display: block;
-      font-size: 1.3rem;
-      color: var(--text);
+    .glass-card:hover {
+      border-color: rgba(255,255,255,0.15);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 26px;
-      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s ease, border 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(56, 242, 194, 0.3);
-    }
-
-    .card span {
-      display: inline-flex;
+    /* Hero Section */
+    .hero {
+      min-height: 90vh;
+      display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: var(--accent);
-      font-weight: 600;
+      position: relative;
+      padding-top: 80px;
     }
 
-    .timeline {
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-item {
-      display: grid;
-      gap: 12px;
-      padding: 22px;
-      border-radius: var(--radius-md);
-      background: var(--card-strong);
-      border: 1px solid var(--border);
-    }
-
-    .timeline-item strong {
-      color: var(--accent-3);
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .highlight {
-      background: linear-gradient(150deg, rgba(56, 242, 194, 0.15), rgba(91, 140, 255, 0.12));
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      box-shadow: var(--shadow);
-    }
-
-    .price-card {
-      background: linear-gradient(145deg, rgba(56, 242, 194, 0.15), rgba(255, 255, 255, 0.04));
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      border: 1px solid rgba(56, 242, 194, 0.25);
-      box-shadow: var(--shadow);
-      display: grid;
-      gap: 16px;
-    }
-
-    .price {
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: var(--accent);
-    }
-
-    .risk {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 20px;
-    }
-
-    .footer-cta {
-      padding: 50px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(120deg, rgba(91, 140, 255, 0.25), rgba(56, 242, 194, 0.25));
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: var(--shadow);
-      display: grid;
-      gap: 18px;
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s ease forwards;
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 60px;
+      flex-wrap: wrap;
     }
 
-    .fade-in.delay-1 { animation-delay: 0.2s; }
-    .fade-in.delay-2 { animation-delay: 0.4s; }
-    .fade-in.delay-3 { animation-delay: 0.6s; }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
+    .stat-val { font-size: 1.8rem; font-weight: 700; color: #fff; }
+    .stat-label { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* Problem Section */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .highlight-box {
+      border-left: 4px solid var(--accent);
+      padding-left: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .highlight-box strong { color: #fff; display: block; margin-bottom: 4px; font-size: 1.2rem;}
+
+    /* Bento Grid Layout */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .bento-wide { grid-column: span 1; }
+    
     @media (min-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1.2fr 0.8fr;
-      }
+      .bento-wide { grid-column: span 2; }
     }
 
-    @media (max-width: 720px) {
-      .hero {
-        padding: 70px 0 80px;
-      }
+    .step-number {
+      font-size: 3rem;
+      font-weight: 800;
+      opacity: 0.1;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      pointer-events: none;
+    }
 
-      .footer-cta {
-        padding: 32px;
-        text-align: left;
-      }
+    /* Timeline Styled List */
+    .timeline-steps {
+      border-left: 2px solid var(--border);
+      padding-left: 30px;
+      margin-left: 10px;
+    }
+    .step-item { position: relative; margin-bottom: 40px; }
+    .step-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+    }
+    .step-item:last-child { margin-bottom: 0; }
+    .step-title { color: #fff; font-weight: 700; font-size: 1.1rem; margin-bottom: 4px; display: block;}
+
+    /* Pricing */
+    .offer-box {
+      background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: 60px 40px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .offer-box::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+      animation: rotate 10s linear infinite;
+    }
+    
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .offer-content { position: relative; z-index: 2; }
+    .price-tag { font-size: 4rem; font-weight: 800; color: #fff; line-height: 1; margin: 24px 0; }
+    .price-sub { font-size: 1rem; color: var(--text-muted); margin-bottom: 32px; }
+
+    /* Animation Classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 60px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 20px; }
+      .offer-box { padding: 40px 20px; }
     }
   </style>
 </head>
 <body>
+
+  <div class="ambient-light"></div>
+
   <header class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow fade-in">Protocolo Detox Digital</span>
-        <h1 class="fade-in delay-1">Faça seu filho largar o celular e voltar a brincar em apenas 7 dias — sem gritos, castigos ou culpa.</h1>
-        <p class="fade-in delay-2">Um protocolo prático, baseado em neurociência, para reduzir o uso de telas e recuperar a atenção e o comportamento infantil passo a passo.</p>
-        <div class="cta-group fade-in delay-3">
-          <a class="btn-primary" href="#oferta">Quero começar hoje</a>
-          <a class="btn-secondary" href="#conteudo">Ver o que está incluso</a>
-        </div>
-        <div class="stat-grid">
-          <div class="stat">
-            <strong>7 dias</strong>
-            <span>para reverter o padrão</span>
-          </div>
-          <div class="stat">
-            <strong>Passo a passo</strong>
-            <span>sem improviso</span>
-          </div>
-          <div class="stat">
-            <strong>Sem culpa</strong>
-            <span>com base científica</span>
-          </div>
+    <div class="container hero-content">
+      <div class="reveal">
+        <span class="eyebrow">Neurociência Aplicada</span>
+        <h1>Faça seu filho largar o celular em <span style="color: var(--primary);">7 dias</span>.</h1>
+        <p style="max-width: 600px; margin: 0 auto 32px auto;">
+          Sem gritos, sem castigos e sem culpa. Um protocolo baseado no funcionamento dopaminérgico do cérebro infantil para restaurar a atenção e a calma em casa.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#oferta" class="btn btn-glow">Começar Protocolo</a>
+          <a href="#como-funciona" class="btn btn-primary" style="background: transparent; border: 1px solid var(--border); color: #fff;">Entender a Ciência</a>
         </div>
       </div>
-      <div class="hero-card fade-in delay-2">
-        <span class="pill">Identificação</span>
-        <h2>Você não planejou isso.</h2>
-        <p>Um dia o celular era só um recurso rápido. Hoje, virou briga diária.</p>
-        <p>Seu filho fica irritado quando você tira a tela. Não consegue brincar sozinho. Perde o interesse por quase tudo que não pisca, apita ou desliza.</p>
-        <p>E você já tentou de tudo: combinar horários, negociar, proibir, liberar “só mais um pouco”. Nada sustenta.</p>
+
+      <div class="hero-stats reveal delay-200">
+        <div class="stat-item">
+          <span class="stat-val">7 Dias</span>
+          <span class="stat-label">Para reverter o hábito</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">100%</span>
+          <span class="stat-label">Acionável e prático</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val">Zero</span>
+          <span class="stat-label">Termos técnicos difíceis</span>
+        </div>
       </div>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container grid-2">
-      <div class="highlight">
-        <h2>O problema não é apenas o tempo de tela.</h2>
-        <p>É o que ela está fazendo com o cérebro em formação.</p>
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>Amplificação da dor</strong>
-            <p>Quanto mais estímulo rápido, menos tolerância ao tédio. Menos tédio, menos criatividade. Menos criatividade, mais dependência.</p>
-          </div>
-          <div class="timeline-item">
-            <strong>Consequência</strong>
-            <p>Se nada muda, o padrão se consolida. E cada mês torna a reversão mais difícil.</p>
-          </div>
+  <section id="problema">
+    <div class="container problem-grid">
+      <div class="reveal">
+        <h2>Você não planejou isso,<br>mas virou uma guerra.</h2>
+        <p>Um dia o celular era um recurso de 10 minutos para você conseguir tomar banho. Hoje, ele dita o humor da casa.</p>
+        <br>
+        <div class="highlight-box">
+          <strong>O Ciclo da Dopamina</strong>
+          <p style="font-size: 0.95rem;">Telas hiper-estimulantes viciam o cérebro em recompensas rápidas. O mundo real (brincar, desenhar, conversar) parece "chato" e lento em comparação. É biológico, não falta de caráter.</p>
         </div>
       </div>
-      <div class="card">
-        <span>Introdução da solução</span>
-        <h3>O erro comum é tentar resolver isso com força de vontade, castigo ou regras soltas.</h3>
-        <p>Isso falha porque ignora como o cérebro infantil responde à dopamina. O Protocolo Detox Digital existe para isso. Não é teoria. É um plano de execução em 7 dias, desenhado para reduzir a dependência de telas sem gerar colapso emocional em casa.</p>
-        <p>A lógica é simples: primeiro o cérebro, depois o comportamento.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <span class="pill">Prova e credibilidade</span>
-          <h2>Tudo baseado em neurociência real.</h2>
-          <p>Tudo aqui é baseado em princípios reais da neurociência do desenvolvimento e do funcionamento do córtex pré-frontal. Sem linguagem técnica desnecessária. Sem achismo.</p>
-          <p>Você entende o “porquê” antes de aplicar o “como”. Isso é o que evita recaídas.</p>
-        </div>
-        <div class="card">
-          <h3>Por que isso funciona?</h3>
-          <ul>
-            <li>Recalibra a resposta dopaminérgica sem choque emocional.</li>
-            <li>Trabalha a atenção com estímulos sensoriais reais.</li>
-            <li>Constrói novas rotinas sustentáveis com a família.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="conteudo">
-    <div class="container">
-      <span class="pill">O que você vai receber</span>
-      <h2>Um protocolo completo e aplicável.</h2>
-      <div class="grid-3" style="margin-top: 24px;">
-        <div class="card">
-          <h3>Ebook direto ao ponto</h3>
-          <p>Uma explicação clara do que as telas fazem no cérebro da criança — sem termos médicos confusos.</p>
-        </div>
-        <div class="card">
-          <h3>Entenda as birras</h3>
-          <p>O motivo real das birras quando o celular é retirado, e por que isso não é falta de limite.</p>
-        </div>
-        <div class="card">
-          <h3>Plano 7 dias</h3>
-          <p>Um plano de 7 dias dividido passo a passo para aplicar com segurança.</p>
-        </div>
-      </div>
-      <div class="grid-2" style="margin-top: 24px;">
-        <div class="timeline-item">
-          <strong>Dias 1 e 2</strong>
-          <p>Você aprende a reduzir sem choque e substituir sem conflito.</p>
-        </div>
-        <div class="timeline-item">
-          <strong>Dias 3 a 5</strong>
-          <p>Você reativa o interesse da criança pelo mundo real com atividades sensoriais simples.</p>
-        </div>
-        <div class="timeline-item">
-          <strong>Dias 6 e 7</strong>
-          <p>Você estabelece regras de higiene digital que a criança consegue sustentar.</p>
-        </div>
-        <div class="timeline-item">
-          <strong>Além do protocolo</strong>
-          <p>Um capítulo prático para lidar com crises e abstinência sem ceder, além de um direcionamento claro do próximo passo para fortalecer a comunicação em casa.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container grid-2">
-      <div class="card">
-        <span>Para quem é</span>
-        <h3>Este protocolo é para pais e mães de crianças pequenas que sabem que existe um problema e querem agir agora.</h3>
-        <p>É para quem quer menos tela e mais infância real.</p>
-      </div>
-      <div class="card">
-        <span>Para quem não é</span>
-        <ul>
-          <li>Não é para quem acredita que “isso passa sozinho”.</li>
-          <li>Não é para quem procura um milagre instantâneo sem fazer ajustes em casa.</li>
-          <li>Não é para quem quer apenas culpar a criança.</li>
+      <div class="glass-card reveal delay-200" style="background: rgba(255, 100, 100, 0.05); border-color: rgba(255, 100, 100, 0.1);">
+        <h3>Sinais de Alerta</h3>
+        <ul style="list-style: none; margin-top: 20px;">
+          <li style="margin-bottom: 16px; display: flex; gap: 12px; align-items: center;">
+            <span style="color: #ef4444;">✕</span> Irritabilidade extrema ao desligar a tela.
+          </li>
+          <li style="margin-bottom: 16px; display: flex; gap: 12px; align-items: center;">
+            <span style="color: #ef4444;">✕</span> Incapacidade de brincar sozinho.
+          </li>
+          <li style="margin-bottom: 16px; display: flex; gap: 12px; align-items: center;">
+            <span style="color: #ef4444;">✕</span> Tédio constante fora do digital.
+          </li>
+          <li style="display: flex; gap: 12px; align-items: center;">
+            <span style="color: #ef4444;">✕</span> Negociação interminável por "mais 5 minutos".
+          </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="section" id="oferta">
-    <div class="container grid-2">
-      <div>
-        <span class="pill">Oferta</span>
-        <h2>O Protocolo Detox Digital custa R$ 29,90.</h2>
-        <p>Menos que uma hora de terapia. Menos que um brinquedo esquecido em dois dias. E muito menos que o custo de manter esse padrão por anos.</p>
-        <p>Você paga uma vez e aplica quando precisar.</p>
+  <section id="como-funciona">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;" class="reveal">
+        <span class="eyebrow">O Método</span>
+        <h2>Não é sobre proibir.<br>É sobre recalibrar.</h2>
+        <p>Força de vontade não vence química cerebral. Estratégia vence.</p>
       </div>
-      <div class="price-card">
-        <div class="price">R$ 29,90</div>
-        <p>Acesso imediato ao protocolo completo.</p>
-        <div class="risk">
-          <strong>Risco reverso</strong>
-          <p>Se em 7 dias você não sentir mais controle, mais clareza e menos conflito em relação às telas, o material não cumpriu seu papel.</p>
+
+      <div class="bento-grid">
+        <div class="glass-card reveal">
+          <span class="step-number">01</span>
+          <h3>Entenda o "Porquê"</h3>
+          <p>Um guia curto e direto sobre o que acontece no córtex pré-frontal do seu filho. Quando você entende a biologia, a culpa desaparece e a estratégia começa.</p>
         </div>
-        <a class="btn-primary" href="#">Quero garantir o acesso</a>
+
+        <div class="glass-card reveal delay-100">
+          <span class="step-number">02</span>
+          <h3>Gestão de Crise</h3>
+          <p>Como lidar com a "abstinência" e as birras dos primeiros dias sem ceder, sem gritar e mantendo a conexão emocional.</p>
+        </div>
+
+        <div class="glass-card bento-wide reveal delay-200" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(255,255,255,0.02)); border-color: rgba(16, 185, 129, 0.2);">
+          <span class="step-number" style="color: var(--primary); opacity: 0.2;">03</span>
+          <h3 style="color: var(--primary);">O Cronograma de 7 Dias</h3>
+          <p style="margin-bottom: 24px;">Um plano de ação dia após dia. Você não precisa pensar no que fazer, apenas seguir o roteiro.</p>
+          
+          <div class="timeline-steps">
+            <div class="step-item">
+              <span class="step-title">Dias 1-2: Redução Estratégica</span>
+              <span style="font-size: 0.9rem; color: var(--text-muted);">Técnicas de substituição de dopamina sem choque.</span>
+            </div>
+            <div class="step-item">
+              <span class="step-title">Dias 3-5: O "Detox" Sensorial</span>
+              <span style="font-size: 0.9rem; color: var(--text-muted);">Reintrodução de tédio construtivo e brincadeiras offline.</span>
+            </div>
+            <div class="step-item">
+              <span class="step-title">Dias 6-7: A Nova Rotina</span>
+              <span style="font-size: 0.9rem; color: var(--text-muted);">Estabelecendo o novo normal sustentável.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container footer-cta">
-      <h2>Clique no botão abaixo e comece hoje.</h2>
-      <p>Quanto antes você age, mais fácil é reverter.</p>
-      <a class="btn-primary" href="#">Começar agora</a>
+  <section id="oferta">
+    <div class="container reveal">
+      <div class="offer-box">
+        <div class="offer-content">
+          <h2>Recupere a atenção do seu filho</h2>
+          <p>Custa menos que um brinquedo que ele vai esquecer amanhã.</p>
+          
+          <div class="price-tag">R$ 29,90</div>
+          <div class="price-sub">Pagamento único. Acesso vitalício.</div>
+          
+          <a href="#" class="btn btn-glow" style="width: 100%; max-width: 300px; padding: 20px;">Quero o Protocolo Agora</a>
+          
+          <p style="margin-top: 24px; font-size: 0.85rem; opacity: 0.7;">
+            🔒 <strong>Garantia de 7 dias:</strong> Se você aplicar e não sentir diferença na harmonia da casa, devolvemos seu dinheiro. Sem perguntas.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Protocolo Detox Digital. Todos os direitos reservados.</p>
+      <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">Este produto não substitui aconselhamento médico profissional.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple Interaction Observer for Scroll Reveal Animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // Only animate once
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
