@@ -1,417 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Protocolo Detox Digital | Resgate a Infância</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      /* Paleta "Biblioteca/Editorial" */
-      --color-gold: #B8860B; /* Dourado escuro para botões/detalhes */
-      --color-gold-hover: #9c7209;
-      --color-navy: #15202B; /* Azul noturno profundo para fundos de contraste */
-      --color-paper: #F9F7F2; /* Off-white cor de papel antigo/livro */
-      --color-white: #FFFFFF;
-      --color-text: #2c2c2c;
-      --color-text-light: #555555;
-      
-      --font-heading: 'Playfair Display', serif;
-      --font-body: 'Lato', sans-serif;
-      
-      --spacing-section: 100px; /* Espaçamento generoso entre "slides" */
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background-color: var(--color-paper);
-      color: var(--color-text);
-      font-family: var(--font-body);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Tipografia de Autoridade */
-    h1, h2, h3, h4 {
-      font-family: var(--font-heading);
-      color: var(--color-navy);
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 3.8rem);
-      font-weight: 700;
-      margin-bottom: 24px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 600;
-      margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-    }
-
-    /* Adiciona um detalhe elegante abaixo dos H2 */
-    .section-title h2::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background-color: var(--color-gold);
-      margin: 15px auto 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. [Nome] | Desenvolvimento Infantil & Psicologia</title>
+    <meta name="description" content="Inclusão escolar, fonoaudiologia e psicologia transpessoal. Conheça o Protocolo Detox Digital.">
     
-    .section-title.left h2::after { margin: 15px 0 0; }
-
-    p {
-      font-size: 1.125rem;
-      color: var(--color-text-light);
-      margin-bottom: 20px;
-      max-width: 800px;
-    }
-
-    .lead { font-size: 1.3rem; font-weight: 300; }
-
-    /* Botões Elegantes */
-    .btn {
-      display: inline-block;
-      padding: 18px 40px;
-      background-color: var(--color-gold);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-      border-radius: 4px; /* Bordas levemente arredondadas, não pílula */
-      transition: background 0.3s ease;
-      border: 1px solid var(--color-gold);
-    }
-
-    .btn:hover {
-      background-color: var(--color-gold-hover);
-      border-color: var(--color-gold-hover);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--color-navy);
-      border: 1px solid var(--color-navy);
-    }
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    .btn-outline:hover {
-      background: var(--color-navy);
-      color: #fff;
-    }
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    /* Estrutura de Slides/Seções */
-    section {
-      padding: var(--spacing-section) 0;
-      width: 100%;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    .container {
-      width: min(1100px, 90%);
-      margin: 0 auto;
-      position: relative;
-    }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Outfit"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#Fdfcf8', // Off-white quente
+                            primary: '#6B5B95', // Roxo suave (Espiritualidade/Transpessoal)
+                            accent: '#D4A5A5', // Rosa antigo (Acolhimento)
+                            sage: '#87A96B', // Verde sálvia (Saúde/Crescimento)
+                            text: '#4A4A4A',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out infinite reverse',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    /* Hero Section - Slide 1 */
-    .hero {
-      background: linear-gradient(to right, #F9F7F2 50%, #ECE9E0 50%); /* Divisão sutil */
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-    }
+    <style>
+        /* CSS Customizado para efeitos de vidro e background */
+        body {
+            background-color: #FDFCF8;
+            overflow-x: hidden;
+        }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
+        /* Orbs de fundo para a "Magia" */
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+        }
 
-    .book-mockup {
-      background: #fff;
-      width: 100%;
-      height: 500px; /* Placeholder para imagem */
-      box-shadow: -20px 20px 60px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #ddd;
-      position: relative;
-    }
-    
-    .book-mockup::after {
-      content: "IMAGEM DO PRODUTO/MÃE E FILHO";
-      color: #ccc;
-      font-weight: 700;
-      text-align: center;
-    }
+        /* Efeito de Vidro nos Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    /* Slide Escuro (Contraste) */
-    .bg-navy {
-      background-color: var(--color-navy);
-      color: #fff;
-    }
-    
-    .bg-navy h2, .bg-navy h3, .bg-navy p { color: #fff; }
-    .bg-navy .section-title h2::after { background-color: var(--color-gold); }
+        .glass-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 40px rgba(107, 91, 149, 0.15); /* Sombra roxa suave */
+            border-color: #D4A5A5;
+        }
 
-    /* Cards e Grids (Estilo Biblioteca) */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .feature-card {
-      background: #fff;
-      padding: 40px 30px;
-      border-top: 4px solid var(--color-gold);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    
-    .feature-card:hover { transform: translateY(-5px); }
-
-    .feature-icon {
-      font-size: 2rem;
-      color: var(--color-gold);
-      margin-bottom: 20px;
-      font-family: var(--font-heading);
-    }
-
-    .feature-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      color: var(--color-navy);
-    }
-
-    .feature-card p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* Conteúdo Programático (Lista Elegante) */
-    .module-list {
-      list-style: none;
-      border-top: 1px solid #ddd;
-    }
-
-    .module-item {
-      display: flex;
-      padding: 25px 0;
-      border-bottom: 1px solid #ddd;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .module-number {
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      color: var(--color-gold);
-      line-height: 1;
-      font-weight: 700;
-      min-width: 60px;
-    }
-
-    /* Seção de Preço */
-    .price-section {
-      text-align: center;
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 60px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-      position: relative;
-    }
-
-    .price-section::before {
-      content: "";
-      position: absolute;
-      top: 5px; left: 5px; right: 5px; bottom: 5px;
-      border: 1px solid var(--color-gold);
-      pointer-events: none;
-    }
-
-    .price-tag {
-      font-family: var(--font-heading);
-      font-size: 4rem;
-      color: var(--color-navy);
-      font-weight: 700;
-      margin: 20px 0;
-    }
-    
-    .price-old {
-      text-decoration: line-through;
-      color: #999;
-      font-size: 1.2rem;
-    }
-
-    /* Responsividade */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .hero { background: var(--color-paper); text-align: center; padding-top: 120px; }
-      .feature-grid { grid-template-columns: 1fr; }
-      .book-mockup { height: 300px; display: none; } /* Ocultar mockup no mobile ou ajustar */
-      .section-title h2::after { margin: 15px auto; }
-      .section-title.left h2::after { margin: 15px auto; } /* Centralizar tudo no mobile */
-      .section-title.left { text-align: center; }
-      .module-item { flex-direction: column; gap: 10px; text-align: center; }
-      .module-number { margin: 0 auto; }
-    }
-  </style>
+        /* Destaque especial para o Ebook */
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(245, 240, 255, 0.9));
+            border: 1px solid #D4A5A5;
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans text-brand-text min-h-screen flex flex-col justify-center items-center relative selection:bg-brand-accent selection:text-white">
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h4 style="color: var(--color-gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 20px; font-weight: 700;">Método Científico & Parentalidade</h4>
-        <h1>Resgate a infância do seu filho em 7 dias.</h1>
-        <p class="lead">Um protocolo estruturado para eliminar a dependência de telas, reduzir a irritabilidade e devolver a capacidade de brincar.</p>
-        <div style="margin-top: 30px;">
-          <a href="#oferta" class="btn">Quero Começar o Protocolo</a>
-        </div>
-        <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.7;">*Baseado em neurociência do desenvolvimento.</p>
-      </div>
-      <div class="book-mockup">
-        </div>
-    </div>
-  </section>
+    <div class="bg-orb w-96 h-96 bg-brand-primary/20 top-[-10%] left-[-10%] animate-float"></div>
+    <div class="bg-orb w-80 h-80 bg-brand-accent/20 bottom-[10%] right-[-5%] animate-float-delayed"></div>
+    <div class="bg-orb w-64 h-64 bg-brand-sage/15 top-[40%] left-[20%] animate-pulse-slow"></div>
 
-  <section style="background-color: #fff;">
-    <div class="container">
-      <div class="section-title" style="text-align: center; margin-bottom: 60px;">
-        <h2>A "nova normalidade" está destruindo<br>o desenvolvimento infantil.</h2>
-      </div>
-      
-      <div class="hero-grid">
-        <div style="padding-right: 20px;">
-          <p>Não é apenas sobre "ficar no celular". É sobre o que acontece com o cérebro quando ele é bombardeado por dopamina rápida, horas por dia.</p>
-          <p>Você percebe os sinais: a criança não tolera o tédio. A comida só é aceita com tela. O sono é agitado. E a simples menção de "desligar" gera uma crise desproporcional.</p>
-          <p><strong>Isso não é fase. É um padrão neurológico que precisa ser interrompido.</strong></p>
-        </div>
-        <div style="background: var(--color-paper); padding: 40px; border-left: 4px solid var(--color-navy);">
-          <h3 style="font-size: 1.5rem; margin-bottom: 20px;">O que estamos enfrentando:</h3>
-          <ul style="list-style: none; space-y: 15px;">
-            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-              <span style="color: var(--color-gold); font-size: 1.5rem;">•</span> Fragmentação da atenção.
-            </li>
-            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-              <span style="color: var(--color-gold); font-size: 1.5rem;">•</span> Intolerância à frustração.
-            </li>
-            <li style="display: flex; align-items: center; gap: 10px;">
-              <span style="color: var(--color-gold); font-size: 1.5rem;">•</span> Perda da criatividade no mundo real.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    <main class="w-full max-w-md px-6 py-12 flex flex-col items-center z-10">
 
-  <section class="bg-navy">
-    <div class="container">
-      <div class="section-title" style="text-align: center; margin-bottom: 60px;">
-        <h2>Um retorno à ordem em 3 etapas</h2>
-        <p style="color: rgba(255,255,255,0.8); margin: 0 auto;">O Protocolo Detox Digital não é um conjunto de dicas soltas. É um sistema.</p>
-      </div>
+        <header class="text-center mb-10 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+            <div class="relative w-32 h-32 mx-auto mb-6">
+                <div class="absolute inset-0 rounded-full border border-brand-accent/50 scale-110 animate-spin" style="animation-duration: 15s; border-style: dashed;"></div>
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&fit=crop" 
+                     alt="Foto da Dra" 
+                     class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg relative z-10">
+                
+                <div class="absolute -bottom-2 -right-2 bg-white px-3 py-1 rounded-full shadow-md border border-brand-sage/30 flex items-center gap-1">
+                    <i data-lucide="sparkles" class="w-3 h-3 text-brand-primary"></i>
+                    <span class="text-xs font-semibold text-brand-primary">Transpessoal</span>
+                </div>
+            </div>
 
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="feature-icon">I</div>
-          <h3>Consciência & Preparo</h3>
-          <p>Entenda o mecanismo biológico do vício e prepare o ambiente (e sua mente) para a mudança, eliminando a culpa dos pais.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">II</div>
-          <h3>Interrupção Assistida</h3>
-          <p>Um guia passo a passo para os dias de "choque", ensinando a lidar com a abstinência e as birras sem ceder.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">III</div>
-          <h3>Reconstrução do Hábito</h3>
-          <p>Ferramentas para preencher o vazio deixado pela tela com atividades sensoriais que restauram o foco e a calma.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <h1 class="font-serif text-4xl font-semibold text-brand-primary mb-2 tracking-tight">Dra. [Nome]</h1>
+            <p class="text-sm uppercase tracking-widest text-gray-500 mb-4">Fonoaudióloga & Psicóloga</p>
+            
+            <p class="text-gray-600 leading-relaxed text-sm max-w-xs mx-auto">
+                Transformando a inclusão em prática e telas em conexões reais. 
+                <span class="italic font-serif block mt-1 text-brand-accent">"Presença cura."</span>
+            </p>
+        </header>
 
-  <section>
-    <div class="container">
-      <div class="section-title left" style="margin-bottom: 50px;">
-        <h2>O cronograma de 7 dias</h2>
-        <p>Tudo o que você precisa fazer, dia após dia. Sem improvisos.</p>
-      </div>
+        <section class="w-full space-y-4 flex flex-col gap-2">
 
-      <ul class="module-list">
-        <li class="module-item">
-          <div class="module-number">01</div>
-          <div>
-            <h3>Dias 1 e 2: A Redução Gradual</h3>
-            <p style="margin-bottom: 0;">Como introduzir limites sem gerar uma guerra nuclear imediata. Técnicas de substituição de estímulos visuais por auditivos.</p>
-          </div>
-        </li>
-        <li class="module-item">
-          <div class="module-number">03</div>
-          <div>
-            <h3>Dias 3 a 5: O Vale da Abstinência</h3>
-            <p style="margin-bottom: 0;">O período crítico. Você receberá roteiros do que falar e o que fazer quando a criança disser que "não tem nada para fazer".</p>
-          </div>
-        </li>
-        <li class="module-item">
-          <div class="module-number">06</div>
-          <div>
-            <h3>Dias 6 e 7: A Consolidação</h3>
-            <p style="margin-bottom: 0;">Estabelecendo as regras de Higiene Digital que durarão anos. Criação de "Zonas Livres de Tela" na casa.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+            <a href="#link-ebook" class="glass-card highlight-card p-4 rounded-2xl flex items-center gap-4 group opacity-0 animate-fade-in-up cursor-pointer" style="animation-delay: 0.2s;">
+                <div class="bg-brand-primary/10 p-3 rounded-full group-hover:bg-brand-primary/20 transition-colors">
+                    <i data-lucide="book-heart" class="w-6 h-6 text-brand-primary"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="font-bold text-gray-800 text-lg">Guia Detox Digital</h3>
+                        <span class="bg-brand-accent text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Novo</span>
+                    </div>
+                    <p class="text-xs text-gray-500 leading-tight">Para crianças pequenas: transforme o tédio em criatividade.</p>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-primary group-hover:translate-x-1 transition-all"></i>
+            </a>
 
-  <section style="background-color: var(--color-paper);" id="oferta">
-    <div class="container">
-      <div class="price-section">
-        <h4 style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: #777;">Acesso Imediato ao Material Completo</h4>
-        <h2 style="margin-top: 10px;">Protocolo Detox Digital</h2>
-        
-        <div class="price-tag">
-          <span style="font-size: 1.5rem; vertical-align: top; color: #777;">R$</span> 29,90
-        </div>
-        
-        <p style="font-size: 0.95rem; margin-bottom: 30px;">Menos que o valor de um lanche. Um investimento vitalício na saúde mental da sua família.</p>
-        
-        <a href="#" class="btn" style="width: 100%;">Adquirir Agora</a>
-        
-        <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
-          <p style="font-size: 0.8rem; font-style: italic;">Garantia incondicional de 7 dias. Se não funcionar para sua família, devolvemos o valor integralmente.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <a href="#link-instituto" class="glass-card p-4 rounded-xl flex items-center gap-4 group opacity-0 animate-fade-in-up cursor-pointer" style="animation-delay: 0.3s;">
+                <div class="bg-brand-sage/10 p-3 rounded-full group-hover:bg-brand-sage/20 transition-colors">
+                    <i data-lucide="building-2" class="w-6 h-6 text-brand-sage"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-gray-800">Conheça o Instituto</h3>
+                    <p class="text-xs text-gray-500">6 anos de excelência em autismo e inclusão.</p>
+                </div>
+            </a>
 
-  <footer style="background: var(--color-navy); color: #fff; padding: 60px 0; text-align: center;">
-    <div class="container">
-      <h3 style="color: #fff; font-family: var(--font-heading); margin-bottom: 20px;">Protocolo Detox Digital</h3>
-      <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Copyright © 2024. Todos os direitos reservados.</p>
-      <div style="margin-top: 20px;">
-        <a href="#" style="color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Termos de Uso</a>
-        <a href="#" style="color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 10px; font-size: 0.8rem;">Política de Privacidade</a>
-      </div>
-    </div>
-  </footer>
+            <a href="#link-lei" class="glass-card p-4 rounded-xl flex items-center gap-4 group opacity-0 animate-fade-in-up cursor-pointer" style="animation-delay: 0.4s;">
+                <div class="bg-blue-50 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
+                    <i data-lucide="scale" class="w-6 h-6 text-blue-500"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-gray-800">Nova Lei de Inclusão</h3>
+                    <p class="text-xs text-gray-500">Entenda o Decreto nº 12.686 e o Estudo de Caso.</p>
+                </div>
+            </a>
 
+            <a href="#whatsapp" class="glass-card p-4 rounded-xl flex items-center gap-4 group opacity-0 animate-fade-in-up cursor-pointer" style="animation-delay: 0.5s;">
+                <div class="bg-green-50 p-3 rounded-full group-hover:bg-green-100 transition-colors">
+                    <i data-lucide="message-circle" class="w-6 h-6 text-green-600"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-semibold text-gray-800">Agendar Consulta</h3>
+                    <p class="text-xs text-gray-500">Fonoaudiologia e Psicologia.</p>
+                </div>
+            </a>
+
+        </section>
+
+        <footer class="mt-12 opacity-0 animate-fade-in-up" style="animation-delay: 0.6s;">
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-brand-primary hover:scale-110 transition-all p-2"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-primary hover:scale-110 transition-all p-2"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-primary hover:scale-110 transition-all p-2"><i data-lucide="mail" class="w-6 h-6"></i></a>
+            </div>
+            <p class="text-[10px] text-center text-gray-400 font-serif italic">
+                "Inclusão de verdade não é improviso. É organização."
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
